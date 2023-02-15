@@ -116,7 +116,7 @@ function cellCallbackFunction(event) {
     } else if (gameBoardTTT[0][2] == "O" && gameBoardTTT[1][1] == "O" && gameBoardTTT[2][0] == "O"){
         gameOver.textContent = "The Game is over, O wins. Reload the page to play again."
     }
-    if (gameBoardTTT[0][0] !== undefined && gameBoardTTT[0][1] !== undefined && gameBoardTTT[0][2] !== undefined && gameBoardTTT[1][0] !== undefined && gameBoardTTT[1][1] !== undefined && gameBoardTTT[1][2] !== undefined && gameBoardTTT[2][0] !== undefined && gameBoardTTT[2][1] !== undefined && gameBoardTTT[2][2] !== undefined) {
+    if (gameBoardTTT[0][0] !== undefined && gameBoardTTT[0][1] !== undefined && gameBoardTTT[0][2] !== undefined && gameBoardTTT[1][0] !== undefined && gameBoardTTT[1][1] !== undefined && gameBoardTTT[1][2] !== undefined && gameBoardTTT[2][0] !== undefined && gameBoardTTT[2][1] !== undefined && gameBoardTTT[2][2] !== undefined && gameOver.textContent !== "The game is over, O wins. Reload the page to play again." && gameOver.textContent !== "The game is over, X wins. Reload the page to play again.") {
         gameOver.textContent = "The Game ends in a tie. Reload the page to play again."
     }
     
