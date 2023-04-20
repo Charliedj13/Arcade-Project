@@ -17,7 +17,6 @@ playerDisplay.textContent = name1 + " (X)" + " vs. " + name2 + " (O)"
 
 window.addEventListener("DOMContentLoaded", function () {
  if (gameStarted == false){
-    console.log("Is this working")
     buildGrid ()
     playerTurn ()
     gameStarted = true
@@ -33,8 +32,6 @@ let gameBoardTTT = [
 function playerTurn (){
     let player = Math.ceil(Math.random () * 2)
     if (player == 1){
-        // gameState == "x"
-        // console.log(gameState["currentPlayer"])
         gameState.currentPlayer = "X"
         console.log(gameState.currentPlayer)
         playerSelection.textContent = "It is X turn"
@@ -51,13 +48,11 @@ function playerTurn (){
 
 function cellCallbackFunction(event) {
     
-    // console.log(event)
     console.log(event.target.classList)
     let position = event.target.classList[1]
     let row = position[0]
     let cell = position[1]
 
-    // console.log(typeof event.target.classList[1])
     if (event.target.textContent == "") {
     console.log(gameState.currentPlayer)
     console.log(event.target.textContent)
@@ -119,21 +114,6 @@ function cellCallbackFunction(event) {
     if (gameBoardTTT[0][0] !== undefined && gameBoardTTT[0][1] !== undefined && gameBoardTTT[0][2] !== undefined && gameBoardTTT[1][0] !== undefined && gameBoardTTT[1][1] !== undefined && gameBoardTTT[1][2] !== undefined && gameBoardTTT[2][0] !== undefined && gameBoardTTT[2][1] !== undefined && gameBoardTTT[2][2] !== undefined && gameOver.textContent !== "The game is over, O wins. Reload the page to play again." && gameOver.textContent !== "The game is over, X wins. Reload the page to play again.") {
         gameOver.textContent = "The Game ends in a tie. Reload the page to play again."
     }
-    
-    
-    
-    // function changePlayer () {
-    //     if (currentPlayer = "X") {
-    //     gameStarted.currentPlayer = "O"
-    // } else {
-    //     gameStarted.currentPlayer = "X"
-    // }
-
-    // }
-
-
-    // console.log(targetIndexPosition)
-    // console.log(typeof targetIndexPosition)
        
 }
 
@@ -145,18 +125,14 @@ function buildGrid () {
     let numberTrackerRow = 0
     for (let indexPosition = 0; indexPosition < gameBoardTTT.length; indexPosition++){
     let newRow = document.createElement("tr")
-    // newRow.className = "cell"
         newRow.style.backgroundColor = "red"
+        newRow.style.width = "450px"
         newRow.style.border = "2px solid black"
         newRow.classList.add(indexPosition)
 
     for (let numOfColumns = 0; numOfColumns < gameBoardTTT.length; numOfColumns++) {
         let newCell = document.createElement("td") 
         newCell.classList.add("cell")
-
-        // newRow.classList.add(indexPosition)
-        // newCell.classList.add(numberTrackerRow)
-        // numberTrackerRow++
 
         newCell.classList.add(`${indexPosition}${numOfColumns}`)
 
@@ -168,25 +144,6 @@ function buildGrid () {
     tableElement.appendChild(newRow)
 }
 }
-
-
-// const gameState = {
-//     players: ['x', 'o']
-// }
-// function playerTurn (){
-//     let player = Math.ceil(Math.random () * 2)
-//     if (player == 1){
-//         gameState == "x"
-//         playerSelection.textContent = "It is X turn"
-//         console.log("It is X turn")
-        
-//     } else if (player == 2){
-//         gameState == "o"
-//         playerSelection.textContent = "It is O turn"
-//         console.log("It is O turn")
-        
-//     }
-// }
 
 
 
